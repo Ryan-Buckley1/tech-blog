@@ -60,9 +60,8 @@ router.post("/", async (req, res) => {
       req.session.userId = newUser.id;
       req.session.username = newUser.username;
       req.session.loggedIn = true;
-
-      res.json(newUser);
     });
+    res.json(newUser);
   } catch (error) {
     console.error(error);
     res.status(500).json(error);
@@ -72,9 +71,9 @@ router.post("/", async (req, res) => {
 //LOGIN
 router.post("/login", async (req, res) => {
   try {
-    const singleUser = await User.findOne({
+    let singleUser = await User.findOne({
       where: {
-        id: req.body.email,
+        email: req.body.email,
       },
     });
 
@@ -82,7 +81,7 @@ router.post("/login", async (req, res) => {
       res.status(400).json({ message: "No user found with that email!" });
       return;
     }
-    const validPassword = (singleUser = singleUser.checkPassword(
+    let validPassword = (singleUser = singleUser.checkPassword(
       req.body.password
     ));
     if (!validPassword) {

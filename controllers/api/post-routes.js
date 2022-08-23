@@ -63,6 +63,7 @@ router.post("/", async (req, res) => {
   try {
     const newPost = await Post.create({
       title: req.body.title,
+      postText: req.body.postText,
       userId: req.session.userId,
     });
     res.json(newPost);

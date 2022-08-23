@@ -27,12 +27,12 @@ User.init(
       validate: {
         isEmail: true,
       },
-      password: {
-        type: DataTypes.STRING,
-        allowNull: false,
-        validate: {
-          len: [4, 12],
-        },
+    },
+    password: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        len: [4],
       },
     },
   },
