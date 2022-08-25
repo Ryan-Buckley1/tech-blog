@@ -16,7 +16,7 @@ router.get("/", async (req, res) => {
 router.post("/", async (req, res) => {
   try {
     if (req.session) {
-      const newComment = Comment.post({
+      const newComment = Comment.create({
         comment_text: req.body.comment_text,
         userId: req.session.userId,
         postId: req.body.postId,
