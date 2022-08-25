@@ -6,15 +6,23 @@ const Post = require("./Post");
 
 //User-Post
 
-User.hasMany(Post);
+User.hasMany(Post, {
+  foreignKey: "userId",
+});
 
-Post.belongsTo(User);
+Post.belongsTo(User, {
+  foreignKey: "userId",
+});
 
 //User-Comment
 
-User.hasMany(Comment);
+User.hasMany(Comment, {
+  foreignKey: "userId",
+});
 
-Comment.belongsTo(User);
+Comment.belongsTo(User, {
+  foreignKey: "userId",
+});
 
 //Post-Comment
 
