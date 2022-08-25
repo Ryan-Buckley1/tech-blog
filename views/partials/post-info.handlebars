@@ -1,8 +1,14 @@
 <article class="post">
   <div class="title">
-    <h1>{{title}}</h1>
+    <h1>
+      {{title}}
+    </h1>
   </div>
   <div class="meta">
     {{postText}}
+    created at
+    {{format_date createdAt}}
+    |
+    <a href="/post/{{id}}">{{comments.length}} comment(s)</a>
   </div>
 </article>
