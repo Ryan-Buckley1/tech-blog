@@ -1,3 +1,5 @@
+//ALLOWS USER TO EDIT THEIR POST WITH THE INFORMATION THEY PROVIDED
+
 async function editFormHandler(event) {
   event.preventDefault();
   const title = document.querySelector("#post-title").value.trim();

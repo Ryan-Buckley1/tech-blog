@@ -1,7 +1,7 @@
 const router = require("express").Router();
 const { User, Post, Comment } = require("../../models");
 
-//get all users
+//ROUTE TO GET ALL USERS
 router.get("/", async (req, res) => {
   try {
     const allUsers = await User.findAll({
@@ -14,7 +14,7 @@ router.get("/", async (req, res) => {
   }
 });
 
-//Get user by id
+//ROUTE TO GET USER BY ID
 router.get("/:id", async (req, res) => {
   try {
     const singleUser = await User.findOne({
@@ -48,7 +48,7 @@ router.get("/:id", async (req, res) => {
   }
 });
 
-//Post new user
+//ROUTE TO CREATE A NEW USER
 router.post("/", async (req, res) => {
   try {
     const newUser = await User.create({
@@ -68,7 +68,7 @@ router.post("/", async (req, res) => {
   }
 });
 
-//LOGIN
+//ROUTE FOR USER TO LOGIN
 router.post("/login", (req, res) => {
   User.findOne({
     where: {
@@ -88,7 +88,6 @@ router.post("/login", (req, res) => {
     req.session.username = dbUserData.username;
     req.session.loggedIn = true;
     req.session.save(() => {
-
       res.json({ user: dbUserData, message: "You are now logged in!" });
       // res.json({ user: dbUserData });
     });

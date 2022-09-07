@@ -1,3 +1,5 @@
+//ALLOWS USER TO POST A COMMENT TO THE SITE USING THE INFORMATION THEY PROVIDED
+
 async function commentFormHandler(event) {
   event.preventDefault();
 

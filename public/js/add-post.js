@@ -1,3 +1,6 @@
+//LETS USER SUBMIT A POST USING THEIR INPUT
+
+
 async function newFormHandler(event) {
   event.preventDefault();
 

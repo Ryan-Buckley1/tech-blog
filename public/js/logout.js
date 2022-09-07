@@ -1,3 +1,5 @@
+//ALLOWS USER TO LOGOUT OF THE SITE USING THE LOGOUT BUTTON
+
 async function logout() {
   const response = await fetch("/api/users/logout", {
     method: "post",

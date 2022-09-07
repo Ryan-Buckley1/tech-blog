@@ -1,3 +1,5 @@
+//ALLOWS USER TO DELETE A POST
+
 async function deleteFormHandler(event) {
   event.preventDefault();
 

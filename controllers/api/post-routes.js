@@ -1,6 +1,8 @@
 const router = require("express").Router();
 const { Post, User, Comment } = require("../../models");
 
+
+//ROUTE THAT FINDS ALL POSTS
 router.get("/", async (req, res) => {
   try {
     const allPosts = await Post.findAll({
@@ -28,6 +30,7 @@ router.get("/", async (req, res) => {
   }
 });
 
+//ROUTE TO FIND A SINGLE POST
 router.get("/:id", async (req, res) => {
   try {
     const singleUser = await Post.findOne({
@@ -59,6 +62,8 @@ router.get("/:id", async (req, res) => {
   }
 });
 
+
+//ROUTE TO CREATE A NEW POST
 router.post("/", async (req, res) => {
   try {
     const newPost = await Post.create({
@@ -73,6 +78,8 @@ router.post("/", async (req, res) => {
   }
 });
 
+
+//ROUTE TO EDIT A POST
 router.put("/:id", async (req, res) => {
   try {
     const updatedPost = await Post.update(
@@ -97,6 +104,7 @@ router.put("/:id", async (req, res) => {
   }
 });
 
+//ROUTE TO DELETE A POST
 router.delete("/:id", async (req, res) => {
   try {
     const deletedPost = Post.destroy({

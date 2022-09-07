@@ -1,6 +1,8 @@
 const router = require("express").Router();
 const { Comment } = require("../../models");
 
+
+//FINDS ALL COMMENTS
 router.get("/", async (req, res) => {
   try {
     const allComments = await Comment.findAll({
@@ -13,6 +15,8 @@ router.get("/", async (req, res) => {
   }
 });
 
+
+//ROUTE FOR USER TO POST A COMMENT
 router.post("/", async (req, res) => {
   try {
     if (req.session) {
@@ -29,6 +33,8 @@ router.post("/", async (req, res) => {
   }
 });
 
+
+//ROUTE THAT ALLOWS USER TO DELETE COMMENT
 router.delete("/:id", async (req, res) => {
   try {
     const deletedComment = await Comment.destroy({

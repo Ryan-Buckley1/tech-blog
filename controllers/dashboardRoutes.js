@@ -1,6 +1,7 @@
 const router = require("express").Router();
 const { Post, User, Comment } = require("../models");
 
+//FINDS ALL POSTS AND RENDERS THE RESULTS TO DASHBOARD
 router.get("/", async (req, res) => {
   try {
     const allPosts = await Post.findAll({
@@ -26,6 +27,7 @@ router.get("/", async (req, res) => {
   }
 });
 
+//GETS SINGLE POST AND RENDERS IT TO EDIT-POST PAGE
 router.get("/edit/:id", async (req, res) => {
   try {
     const editedPost = await Post.findOne({

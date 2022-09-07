@@ -1,3 +1,5 @@
+//ALLOWS USER TO LOGIN TO THE SITE USING THEIR EMAIL AND PASSWORD
+
 async function loginFormHandler(event) {
   event.preventDefault();
 
@@ -16,6 +18,8 @@ async function loginFormHandler(event) {
     }
   }
 }
+
+//ALLOWS USER TO SIGN UP TO THE SITE USING THEIR USERNAME, EMAIL, AND PASSWORD
 
 async function signupFormHandler(event) {
   event.preventDefault();

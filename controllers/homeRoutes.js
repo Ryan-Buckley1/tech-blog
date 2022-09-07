@@ -2,6 +2,7 @@ const { Post, User, Comment } = require("../models");
 
 const router = require("express").Router();
 
+//ROUTE THAT GETS ALL POSTS AND RENDERS THE HOME PAGE
 router.get("/", async (req, res) => {
   try {
     const allPosts = await Post.findAll({
@@ -18,6 +19,8 @@ router.get("/", async (req, res) => {
 //   res.render("homepage");
 // });
 
+
+//ROUTE TO GET SINGLE POST AND RENDERS SINGLE POST PAGE
 router.get("/post/:id", async (req, res) => {
   try {
     const singlePost = await Post.findOne({
@@ -52,6 +55,8 @@ router.get("/post/:id", async (req, res) => {
   }
 });
 
+
+//RENDERS LOG IN PAGE AS LONG AS THE USER ISN'T ALREADY LOGGED IN
 router.get("/login", (req, res) => {
   if (req.session.loggedIn) {
     res.redirect("/");
